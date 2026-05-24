@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GREEN - Guarded Remote Environmental Early-warning Network</title>
+    <!-- Meta tags for premium SEO -->
+    <meta name="description" content="GREEN (Guarded Remote Environmental Early-warning Network) is a state-of-the-art IoT-based forest hazard and activity monitoring system designed to prevent illegal logging and detect early forest fires.">
+    <meta name="keywords" content="GREEN IoT, Forest Monitoring, Illegal Logging Detection, Wildfire Alert, ESP32-S3, Environmental Conservation, UNO-R Capstone">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Floating Navigation Bar -->
+    <header id="main-header">
+        <div class="container nav-container">
+            <div class="logo-wrapper">
+                <img src="green_logo.png" alt="GREEN System Logo" class="logo-img" id="system-logo">
+                <span class="logo-text">G.R.E.E.N<span>.</span></span>
+            </div>
+            <nav>
+                <ul id="nav-list">
+                    <li><a href="#intro" id="nav-link-intro">Introduction</a></li>
+                    <li><a href="#importance" id="nav-link-importance">Importance</a></li>
+                    <li><a href="#install" id="nav-link-install">How to Install</a></li>
+                    <li><a href="#download" id="nav-link-download">Download</a></li>
+                    <li><a href="#about" id="nav-link-about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 1. INTRODUCTION SECTION -->
+    <section id="intro" class="hero-sec">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="university-tag" id="affil-tag">
+                    <span class="dot"></span> UNO-R Capstone Project 2025
+                </div>
+                <h1 id="hero-title">Guarded Remote <span>Environmental</span> Early-warning Network</h1>
+                <p id="hero-description">An innovative, IoT-powered early warning network designed to detect illegal forest activities and environmental hazards in real time, supporting biodiversity conservation and rapid disaster response.</p>
+                <a href="#install" class="btn-primary" id="btn-hero-action">Get Started</a>
+            </div>
+            
+            <!-- Easy Advertisement Video Code Block -->
+            <div class="video-card" id="advertisement-card">
+                <!-- ========================================================================= -->
+                <!-- ADVERTISEMENT VIDEO CONFIGURATION:                                        -->
+                <!-- 1. To put your own advertisement video link:                              -->
+                <!--    Simply replace the URL inside the src="..." attribute of the source    -->
+                <!--    tag below with your own MP4 video path or web link.                    -->
+                <!-- 2. To embed a YouTube or Vimeo video instead:                             -->
+                <!--    Delete the <video> element below and paste your custom <iframe> embed  -->
+                <!--    code inside this <div class="video-wrapper"> container.                -->
+                <!-- ========================================================================= -->
+                <div class="video-wrapper">
+                    <video id="promo-video-element" controls poster="green_logo.png">
+                        <!-- Put your advertisement video link in the 'src' attribute below -->
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-beautiful-aerial-shot-of-a-lush-green-forest-43187-large.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <!-- ========================================================================= -->
+                <div class="video-caption" id="video-card-caption">
+                    Project Video Preview • <span>Advertisement & Demo</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. IMPORTANCE SECTION -->
+    <section id="importance" class="importance-sec section-padding">
+        <div class="container">
+            <div class="title-center">
+                <h2>Why G.R.E.E.N. Matters</h2>
+                <p>Preserving forest ecosystems is crucial for biodiversity conservation and climate regulation. GREEN bridges the gap in timely environmental protection.</p>
+            </div>
+
+            <!-- Aligned with SDGs -->
+            <div class="sdg-showcase">
+                <div class="glass-card sdg-card" id="sdg-13-card">
+                    <div class="sdg-num">SDG Goal 13</div>
+                    <h3>Climate Action</h3>
+                    <p>Deforestation and illegal logging intensify climate change. By securing real-time monitoring and minimizing tree loss, GREEN plays a vital role in local carbon dioxide absorption, mitigating greenhouse gas emissions, and promoting climate resilience.</p>
+                </div>
+                <div class="glass-card sdg-card" id="sdg-15-card">
+                    <div class="sdg-num">SDG Goal 15</div>
+                    <h3>Life on Land</h3>
+                    <p>Targeted at the protection, restoration, and sustainable management of forest ecosystems, GREEN helps authorities preserve terrestrial habitats, protect endangered species, and stop illegal degradation operations before massive loss occurs.</p>
+                </div>
+            </div>
+
+            <!-- Major Forest Threats -->
+            <div class="threats-grid">
+                <div class="glass-card threat-card" id="threat-logging">
+                    <div class="threat-icon"></div>
+                    <h4>Illegal Logging</h4>
+                    <p>Detects unauthorized entry and chainsaw movements in remote forest areas before critical tree canopies are cleared.</p>
+                </div>
+                <div class="glass-card threat-card" id="threat-fire">
+                    <div class="threat-icon"></div>
+                    <h4>Wildfires & Kaingin</h4>
+                    <p>Monitors environmental temperature spikes and air quality anomalies for instant detection of early fire hazards.</p>
+                </div>
+                <div class="glass-card threat-card" id="threat-biodiversity">
+                    <div class="threat-icon"></div>
+                    <h4>Biodiversity Loss</h4>
+                    <p>Protects the native flora and fauna by preserving natural habitats from aggressive human industrial encroachment.</p>
+                </div>
+            </div>
+
+            <!-- Comparison Dashboard (Counters and Indicators) -->
+            <div class="comparison-wrapper" id="comparison-dashboard">
+                <h3>Traditional Methods vs. GREEN IoT</h3>
+                <div class="comparison-grid">
+                    <!-- Traditional Constraints -->
+                    <div class="comparison-box con" id="traditional-constraints">
+                        <h4> Traditional Patrol Constraints</h4>
+                        <ul class="comparison-list">
+                            <li><span class="bullet">✖</span> <strong>Delayed Detection:</strong> Incidents are often identified hours or days later due to vast, isolated terrains.</li>
+                            <li><span class="bullet">✖</span> <strong>Manual Patrolling:</strong> Extremely high physical burden on forest rangers who cannot continuously monitor large regions.</li>
+                            <li><span class="bullet">✖</span> <strong>Zero Visual Evidence:</strong> Difficult to identify and verify offenders in high-risk zones without photographic documentation.</li>
+                            <li><span class="bullet">✖</span> <strong>High Alert Delays:</strong> Lack of active remote communication delays alert dispatch to municipal headquarters.</li>
+                        </ul>
+                    </div>
+                    <!-- GREEN Advantages -->
+                    <div class="comparison-box pro" id="green-advantages">
+                        <h4> GREEN System Advantages</h4>
+                        <ul class="comparison-list">
+                            <li><span class="bullet">✔</span> <strong>Instant Real-time Alerts:</strong> Immediate mobile notifications sent to forest rangers upon threat detection.</li>
+                            <li><span class="bullet">✔</span> <strong>Multi-Sensor Verification:</strong> Integrates motion, temperature, smoke, and camera data to eliminate false alerts.</li>
+                            <li><span class="bullet">✔</span> <strong>Photographic Evidence:</strong> Automatically captures and logs high-definition photos of illegal logging entry points.</li>
+                            <li><span class="bullet">✔</span> <strong>100% Autonomous Operation:</strong> Low-power battery system runs continuously in remote locations with cellular synchronization.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. HOW TO INSTALL SECTION -->
+    <section id="install" class="install-sec section-padding">
+        <div class="container">
+            <div class="title-center">
+                <h2>Installation Guide</h2>
+                <p>Follow these 13 standardized steps to successfully install, calibrate, and deploy the GREEN IoT monitoring node in forest areas.</p>
+            </div>
+
+            <div class="timeline" id="install-timeline">
+                
+                <!-- Step 1 -->
+                <div class="timeline-item" id="install-step-1">
+                    <div class="timeline-content">
+                        <div class="step-number">01</div>
+                        <h3>Prepare the Materials</h3>
+                        <p>Before installation, prepare the GREEN IoT device, detachable battery pack, mounting bracket, screws, cable ties, waterproof enclosure, power cable, SIM module, and basic tools.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="timeline-item" id="install-step-2">
+                    <div class="timeline-content">
+                        <div class="step-number">02</div>
+                        <h3>Choose the Installation Location</h3>
+                        <p>Select a strong pole or healthy tree where the device can clearly monitor the target forest area. The location should have good signal coverage, stable mounting support, and minimal obstruction from leaves or branches.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="timeline-item" id="install-step-3">
+                    <div class="timeline-content">
+                        <div class="step-number">03</div>
+                        <h3>Mount the IoT Device</h3>
+                        <p>Attach the IoT device enclosure to the pole or tree using a metal bracket, screws, or heavy-duty cable ties. Position the camera and sensors facing the area that needs monitoring, such as pathways, tree lines, or possible illegal logging entry points.</p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="timeline-item" id="install-step-4">
+                    <div class="timeline-content">
+                        <div class="step-number">04</div>
+                        <h3>Install the Battery Holder</h3>
+                        <p>Place the detachable battery pack at the bottom part of the pole or tree. This makes it easier to remove and replace the battery without touching the main IoT device.</p>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="timeline-item" id="install-step-5">
+                    <div class="timeline-content">
+                        <div class="step-number">05</div>
+                        <h3>Connect the Battery</h3>
+                        <p>Run a protected power cable from the battery pack to the IoT device. Secure the wire along the pole or tree using cable clips or cable ties so it will not hang loosely or be damaged by wind.</p>
+                    </div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="timeline-item" id="install-step-6">
+                    <div class="timeline-content">
+                        <div class="step-number">06</div>
+                        <h3>Protect the Wiring</h3>
+                        <p>Cover the battery wire using flexible conduit, rubber tubing, or waterproof cable sleeves. This helps protect the cable from rain, insects, animals, and accidental pulling.</p>
+                    </div>
+                </div>
+
+                <!-- Step 7 -->
+                <div class="timeline-item" id="install-step-7">
+                    <div class="timeline-content">
+                        <div class="step-number">07</div>
+                        <h3>Check Waterproofing</h3>
+                        <p>Make sure all openings in the IoT device enclosure and battery case are sealed properly. Use waterproof glands, rubber seals, or electrical tape to prevent water from entering the device.</p>
+                    </div>
+                </div>
+
+                <!-- Step 8 -->
+                <div class="timeline-item" id="install-step-8">
+                    <div class="timeline-content">
+                        <div class="step-number">08</div>
+                        <h3>Power on the System</h3>
+                        <p>Attach the charged battery pack and turn on the IoT device. Check if the sensors, camera, and communication module are receiving power.</p>
+                    </div>
+                </div>
+
+                <!-- Step 9 -->
+                <div class="timeline-item" id="install-step-9">
+                    <div class="timeline-content">
+                        <div class="step-number">09</div>
+                        <h3>Test Network Connection</h3>
+                        <p>Verify that the device can connect to the mobile network using the SIM module. Confirm that sensor readings and alerts can be sent to the GREEN dashboard or mobile application.</p>
+                    </div>
+                </div>
+
+                <!-- Step 10 -->
+                <div class="timeline-item" id="install-step-10">
+                    <div class="timeline-content">
+                        <div class="step-number">10</div>
+                        <h3>Adjust Sensor & Camera Position</h3>
+                        <p>Test the camera view, PIR sensor range, smoke sensor placement, and temperature sensor reading. Adjust the device angle if the monitored area is not properly covered.</p>
+                    </div>
+                </div>
+
+                <!-- Step 11 -->
+                <div class="timeline-item" id="install-step-11">
+                    <div class="timeline-content">
+                        <div class="step-number">11</div>
+                        <h3>Secure the Battery Pack</h3>
+                        <p>Lock or cover the detachable battery case to prevent theft, tampering, or accidental removal. The battery should still be easy to access during maintenance.</p>
+                    </div>
+                </div>
+
+                <!-- Step 12 -->
+                <div class="timeline-item" id="install-step-12">
+                    <div class="timeline-content">
+                        <div class="step-number">12</div>
+                        <h3>Final System Test</h3>
+                        <p>Trigger a test event, such as movement detection, to confirm that the device sends data correctly. Check the dashboard or app to make sure the alert, sensor data, and device status are displayed.</p>
+                    </div>
+                </div>
+
+                <!-- Step 13 -->
+                <div class="timeline-item" id="install-step-13">
+                    <div class="timeline-content">
+                        <div class="step-number">13</div>
+                        <h3>Maintenance Procedure</h3>
+                        <p>During maintenance, remove only the bottom battery pack and replace it with a fully charged one. Inspect the wire, enclosure, mounting bracket, and sensors regularly to ensure the GREEN IoT System remains operational.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. DOWNLOAD SECTION -->
+    <section id="download" class="download-sec section-padding">
+        <div class="container download-layout">
+            <div class="download-info">
+                <h3>Get G.R.E.E.N. Repositories</h3>
+                <p>Deploy your own Guarded Remote Environmental Early-warning Network. Access complete microcontroller firmware, server backend logic, machine learning pipelines, and the mobile dashboard dashboard.</p>
+                <p>Ensure your hardware setup (ESP32-S3 MCU and sensors) aligns with the catalog parameters presented in the About section before loading code assets.</p>
+            </div>
+            
+            <div class="git-card" id="git-repository-card">
+                <div class="git-header">
+                    <div class="git-title">
+                        <span class="icon"></span> green-iot-system.git
+                    </div>
+                    <div class="git-tag">v1.2.0-stable</div>
+                </div>
+                
+                <div class="git-clone-box">
+                    <label for="git-clone-input">HTTPS Git Clone Command</label>
+                    <div class="clone-input-wrapper">
+                        <input type="text" id="git-clone-input" class="clone-input" value="git clone https://github.com/ryleg/green-iot-system.git" readonly>
+                        <button class="btn-copy" id="btn-copy-command" title="Copy to clipboard"></button>
+                    </div>
+                </div>
+                
+                <div class="download-list">
+                    <!-- ========================================================================= -->
+                    <!-- DOWNLOAD LINK CONFIGURATION:                                              -->
+                    <!-- Replace the href="..." links in the cards below with your actual code     -->
+                    <!-- zip download URLs or release pathways.                                    -->
+                    <!-- ========================================================================= -->
+                    
+                    <!-- Firmware -->
+                    <div class="download-item" id="dl-firmware">
+                        <div class="download-meta">
+                            <span class="download-name">Microcontroller Firmware</span>
+                            <span class="download-type">C++ / ESP32-S3 Build</span>
+                        </div>
+                        <a href="https://github.com/ryleg/green-iot-system/releases/download/v1.2.0/green-firmware.zip" class="btn-download-link" id="btn-dl-firmware">Download ZIP</a>
+                    </div>
+                    
+                    <!-- Mobile Dashboard -->
+                    <div class="download-item" id="dl-mobile-app">
+                        <div class="download-meta">
+                            <span class="download-name">Mobile Application APK</span>
+                            <span class="download-type">Kotlin / Android Client</span>
+                        </div>
+                        <a href="https://github.com/ryleg/green-iot-system/releases/download/v1.2.0/green-dashboard-client.apk" class="btn-download-link" id="btn-dl-app">Download APK</a>
+                    </div>
+                    
+                    <!-- Backend Server -->
+                    <div class="download-item" id="dl-backend-server">
+                        <div class="download-meta">
+                            <span class="download-name">Backend Processing Server</span>
+                            <span class="download-type">Python / OpenCV Engine</span>
+                        </div>
+                        <a href="https://github.com/ryleg/green-iot-system/releases/download/v1.2.0/green-backend-server.zip" class="btn-download-link" id="btn-dl-server">Download ZIP</a>
+                    </div>
+                    
+                    <!-- ========================================================================= -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. ABOUT SECTION -->
+    <section id="about" class="about-sec section-padding">
+        <div class="container">
+            <div class="about-intro-grid">
+                <div class="about-intro-content">
+                    <h3>About G.R.E.E.N.</h3>
+                    <p>The Guarded Remote Environmental Early-warning Network is a highly specialized environmental protection prototype developed to address persistent problems of illegal logging, kaingin, and forest degradation.</p>
+                    <p>By shifting from passive, manual observation approaches to an active, automated multi-sensor IoT network, the system acts as a digital guardian, recording critical photographic evidence and dispatching early warning notifications to local municipal authorities within seconds of incident occurrences.</p>
+                </div>
+                <div class="glass-card" id="about-brand-card">
+                    <h4 style="margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem;">Academic Root & Development</h4>
+                    <p style="margin-bottom: 1rem; color: var(--c-mint-cream);"><strong>Department:</strong> College of Information Technology</p>
+                    <p style="margin-bottom: 1rem; color: var(--c-mint-cream);"><strong>University:</strong> University of Negros Occidental Recoletos (UNO-R)</p>
+                    <p style="margin-bottom: 1rem; color: var(--c-mint-cream);"><strong>Project Stage:</strong> Bachelor of Science in Information Technology Capstone Proposal</p>
+                    <p style="color: var(--c-neon-green); font-weight: bold; font-family: var(--font-mono);">Active Evaluation Period • 2025</p>
+                </div>
+            </div>
+
+            <!-- Meet the Capstone Group -->
+            <div class="team-wrapper">
+                <h3>Meet the Capstone Team</h3>
+                <div class="team-grid">
+                    
+                    <!-- Jan Ryan Dela Cruz -->
+                    <div class="team-card" id="team-member-1">
+                        <div class="team-avatar">JD</div>
+                        <h4>Jan Ryan Dela Cruz</h4>
+                        <div class="team-role">Lead Writer & Developer</div>
+                        <div class="team-role" style="font-size: 0.75rem; margin-top: 0.25rem; color: var(--c-neon-green);">BSIT Candidate</div>
+                        <div class="team-affiliation">College of Information Technology<br>UNO-R 2025</div>
+                    </div>
+
+                    <!-- Kenneth Ian Fernandez -->
+                    <div class="team-card" id="team-member-2">
+                        <div class="team-avatar">KF</div>
+                        <h4>Kenneth Ian Fernandez</h4>
+                        <div class="team-role">Fullstack Developer & Designer</div>
+                        <div class="team-role" style="font-size: 0.75rem; margin-top: 0.25rem; color: var(--c-neon-green);">BSIT Candidate</div>
+                        <div class="team-affiliation">College of Information Technology<br>UNO-R 2025</div>
+                    </div>
+
+                    <!-- Ryle Benedict Guiñez -->
+                    <div class="team-card" id="team-member-3">
+                        <div class="team-avatar">RG</div>
+                        <h4>Ryle Benedict Guiñez</h4>
+                        <div class="team-role">Systems Engineer & Designer</div>
+                        <div class="team-role" style="font-size: 0.75rem; margin-top: 0.25rem; color: var(--c-neon-green);">BSIT Candidate</div>
+                        <div class="team-affiliation">College of Information Technology<br>UNO-R 2025</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Hardware/Software Specs Catalog -->
+            <div class="specs-wrapper">
+                <h3>System Technical Specification</h3>
+                <div class="specs-grid">
+                    
+                    <!-- Physical Hardware Specs -->
+                    <div class="spec-category" id="hardware-catalog">
+                        <h4> Hardware Components</h4>
+                        <div class="spec-list">
+                            
+                            <!-- ESP32-s3 -->
+                            <div class="spec-node" id="hw-mcu">
+                                <div class="spec-header">
+                                    <span class="spec-name">Microcontroller Unit (MCU)</span>
+                                    <span class="spec-model">ESP32-S3</span>
+                                </div>
+                                <p class="spec-desc">High-performance Xtensa dual-core CPU. Reads raw sensor values, manages wireless network handshakes, and interfaces with camera pins.</p>
+                            </div>
+                            
+                            <!-- SHT31 -->
+                            <div class="spec-node" id="hw-temp">
+                                <div class="spec-header">
+                                    <span class="spec-name">Temperature & Humidity</span>
+                                    <span class="spec-model">SHT31</span>
+                                </div>
+                                <p class="spec-desc">High-accuracy weatherproof environmental sensor. Monitors ambient air temperatures to detect heat surges associated with fire outbreaks.</p>
+                            </div>
+                            
+                            <!-- MQ-135 -->
+                            <div class="spec-node" id="hw-smoke">
+                                <div class="spec-header">
+                                    <span class="spec-name">Air Quality & Smoke Sensor</span>
+                                    <span class="spec-model">MQ-135</span>
+                                </div>
+                                <p class="spec-desc">Tin dioxide gas analyzer. Monitors pollutant particles, benzene, and CO2 thresholds to identify early signs of smoke.</p>
+                            </div>
+                            
+                            <!-- PIR AM312 -->
+                            <div class="spec-node" id="hw-motion">
+                                <div class="spec-header">
+                                    <span class="spec-name">Passive Infrared Sensor</span>
+                                    <span class="spec-model">PIR AM312</span>
+                                </div>
+                                <p class="spec-desc">Ultra-compact motion tracking component. Monitors human proximity up to a range of 3 meters to log potential illegal intruders.</p>
+                            </div>
+
+                            <!-- OV2640 -->
+                            <div class="spec-node" id="hw-camera">
+                                <div class="spec-header">
+                                    <span class="spec-name">2MP CMOS Camera</span>
+                                    <span class="spec-model">OV2640</span>
+                                </div>
+                                <p class="spec-desc">Digital camera module. Automatically triggers and records JPEG image logs upon motion sensor alert for visual ranger audit.</p>
+                            </div>
+
+                            <!-- Li-ion battery -->
+                            <div class="spec-node" id="hw-power">
+                                <div class="spec-header">
+                                    <span class="spec-name">Battery Power Pack</span>
+                                    <span class="spec-model">Li-ion 10k mAh</span>
+                                </div>
+                                <p class="spec-desc">Super high-density lithium power source. Supplies continuous autonomous node function in deep off-grid forest zones.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Software & Connectivity Specs -->
+                    <div class="spec-category" id="software-catalog">
+                        <h4> Software & Connectivity</h4>
+                        <div class="spec-list">
+                            
+                            <!-- Kotlin/Android -->
+                            <div class="spec-node" id="sw-frontend">
+                                <div class="spec-header">
+                                    <span class="spec-name">App-Based Dashboard</span>
+                                    <span class="spec-model">Kotlin / Android Studio</span>
+                                </div>
+                                <p class="spec-desc">Front-end application interface used to review real-time alerts, visualize forest health metrics, and audit logged pictures.</p>
+                            </div>
+
+                            <!-- Python -->
+                            <div class="spec-node" id="sw-backend">
+                                <div class="spec-header">
+                                    <span class="spec-name">Backend Computing Server</span>
+                                    <span class="spec-model">Python</span>
+                                </div>
+                                <p class="spec-desc">Coordinates central system communication, processes alert protocols, runs system logic, and updates MySQL tables.</p>
+                            </div>
+
+                            <!-- OpenCV -->
+                            <div class="spec-node" id="sw-vision">
+                                <div class="spec-header">
+                                    <span class="spec-name">Computer Vision Library</span>
+                                    <span class="spec-model">OpenCV</span>
+                                </div>
+                                <p class="spec-desc">Handles advanced forest image processing, image compression feeds, and records changes to filter out false motion alarms.</p>
+                            </div>
+
+                            <!-- MySQL -->
+                            <div class="spec-node" id="sw-database">
+                                <div class="spec-header">
+                                    <span class="spec-name">Database Infrastructure</span>
+                                    <span class="spec-model">MySQL</span>
+                                </div>
+                                <p class="spec-desc">Secures system activity history, logs sensor timestamps, registers active forest coordinates, and holds user permissions.</p>
+                            </div>
+
+                            <!-- Connectivity -->
+                            <div class="spec-node" id="sw-network">
+                                <div class="spec-header">
+                                    <span class="spec-name">Data Sync Pipeline</span>
+                                    <span class="spec-model">Cellular / SIM Mod</span>
+                                </div>
+                                <p class="spec-desc">Transmits telemetry packets over cellular networks. Removes SMS dependency by channeling data packages directly via SIM card internet access.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-layout">
+            <div class="footer-info">
+                <div class="footer-logo">G.R.E.E.N<span>.</span></div>
+                <div class="footer-copy">Guarded Remote Environmental Early-warning Network</div>
+            </div>
+            <div class="footer-copy" id="footer-copyright-text">
+                &copy; 2025 BSIT Capstone Group • UNO-R College of IT • All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Copy to Clipboard Logic Script -->
+    <script>
+        const copyBtn = document.getElementById('btn-copy-command');
+        const cloneInput = document.getElementById('git-clone-input');
+        
+        if (copyBtn && cloneInput) {
+            copyBtn.addEventListener('click', () => {
+                cloneInput.select();
+                cloneInput.setSelectionRange(0, 99999); /* For mobile devices */
+                
+                try {
+                    navigator.clipboard.writeText(cloneInput.value);
+                    copyBtn.innerText = '✅';
+                    setTimeout(() => {
+                        copyBtn.innerText = '📋';
+                    }, 2000);
+                } catch (err) {
+                    // Fallback for older browsers
+                    document.execCommand('copy');
+                    copyBtn.innerText = '✅';
+                    setTimeout(() => {
+                        copyBtn.innerText = '📋';
+                    }, 2000);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

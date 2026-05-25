@@ -383,16 +383,23 @@
                                     <span class="spec-name">Microcontroller Unit (MCU)</span>
                                     <span class="spec-model">ESP32-S3</span>
                                 </div>
-                                <p class="spec-desc">High-performance Xtensa dual-core CPU. Reads raw sensor values, manages wireless network handshakes, and interfaces with camera pins.</p>
+                                <p class="spec-desc">The ESP32-S3 acts as the main controller of the green system by 
+                                    processing sensor data, handling wireless communication, and interfacing with the camera
+                                     module. Its energy-efficient dual-core processor supports sustainable and continuous 
+                                     environmental monitoring operations, making it suitable for smart forest protection and 
+                                     conservation systems.</p>
                             </div>
                             
                             <!-- SHT31 -->
                             <div class="spec-node" id="hw-temp">
                                 <div class="spec-header">
                                     <span class="spec-name">Temperature & Humidity</span>
-                                    <span class="spec-model">SHT31</span>
+                                    <span class="spec-model">DHT11</span>
                                 </div>
-                                <p class="spec-desc">High-accuracy weatherproof environmental sensor. Monitors ambient air temperatures to detect heat surges associated with fire outbreaks.</p>
+                                <p class="spec-desc">The DHT11 is a basic digital sensor used in the green monitoring system 
+                                    to measure ambient temperature and humidity levels. It helps identify abnormal heat and 
+                                    environmental changes that may indicate potential fire outbreaks, supporting early detection 
+                                    and protection of forest areas.</p>
                             </div>
                             
                             <!-- MQ-135 -->
@@ -401,7 +408,10 @@
                                     <span class="spec-name">Air Quality & Smoke Sensor</span>
                                     <span class="spec-model">MQ-135</span>
                                 </div>
-                                <p class="spec-desc">Tin dioxide gas analyzer. Monitors pollutant particles, benzene, and CO2 thresholds to identify early signs of smoke.</p>
+                                <p class="spec-desc">The MQ-135 is a tin dioxide gas analyzer used in the green monitoring 
+                                    system to monitor air quality by detecting pollutant particles, benzene, and CO2 levels. 
+                                    It helps identify early signs of smoke and environmental pollution, supporting early fire 
+                                    detection and forest environmental monitoring.</p>
                             </div>
                             
                             <!-- PIR AM312 -->
@@ -410,7 +420,10 @@
                                     <span class="spec-name">Passive Infrared Sensor</span>
                                     <span class="spec-model">PIR AM312</span>
                                 </div>
-                                <p class="spec-desc">Ultra-compact motion tracking component. Monitors human proximity up to a range of 3 meters to log potential illegal intruders.</p>
+                                <p class="spec-desc">The AM312 PIR sensor is an ultra-compact motion detection component used 
+                                    in the GREEN system to monitor movement within a short range of up to 3 meters. It supports 
+                                    real-time monitoring by detecting human presence and sending live activity data to the system 
+                                    dashboard, enabling continuous observation of forest areas.</p>
                             </div>
 
                             <!-- OV2640 -->
@@ -419,7 +432,10 @@
                                     <span class="spec-name">2MP CMOS Camera</span>
                                     <span class="spec-model">OV2640</span>
                                 </div>
-                                <p class="spec-desc">Digital camera module. Automatically triggers and records JPEG image logs upon motion sensor alert for visual ranger audit.</p>
+                                <p class="spec-desc">The OV2640 is a digital camera module used in the GREEN system to capture visual
+                                     data in monitored forest areas. It automatically records JPEG image logs when motion is detected,
+                                      providing real-time visual evidence for live dashboard monitoring and supporting situational 
+                                      awareness and environmental observation.</p>
                             </div>
 
                             <!-- Li-ion battery -->
@@ -428,7 +444,10 @@
                                     <span class="spec-name">Battery Power Pack</span>
                                     <span class="spec-model">Li-ion 10k mAh</span>
                                 </div>
-                                <p class="spec-desc">Super high-density lithium power source. Supplies continuous autonomous node function in deep off-grid forest zones.</p>
+                                <p class="spec-desc">The Li-ion 10,000 mAh battery pack serves as the primary power source of the GREEN system,
+                                     delivering continuous and stable energy to support autonomous operation in off-grid forest environments.
+                                      It ensures uninterrupted functioning of sensors, communication modules, and live dashboard data transmission 
+                                      for sustained environmental monitoring.</p>
                             </div>
 
                         </div>
@@ -445,7 +464,10 @@
                                     <span class="spec-name">App-Based Dashboard</span>
                                     <span class="spec-model">Kotlin / Android Studio</span>
                                 </div>
-                                <p class="spec-desc">Front-end application interface used to review real-time alerts, visualize forest health metrics, and audit logged pictures.</p>
+                                <p class="spec-desc">The App-Based Dashboard is a mobile application developed using Kotlin and Android Studio, 
+                                    serving as the user interface of the GREEN system. It enables real-time monitoring of sensor data, displays 
+                                    alerts, and provides visualization of forest conditions. It also allows users to review and audit captured images, 
+                                    supporting efficient and centralized environmental monitoring.</p>
                             </div>
 
                             <!-- Python -->
@@ -454,7 +476,9 @@
                                     <span class="spec-name">Backend Computing Server</span>
                                     <span class="spec-model">Python</span>
                                 </div>
-                                <p class="spec-desc">Coordinates central system communication, processes alert protocols, runs system logic, and updates MySQL tables.</p>
+                                <p class="spec-desc">The Python-based backend computing server manages the core logic of the GREEN system by coordinating 
+                                    device communication, processing alert protocols, executing system operations, and updating the MySQL database. It ensures
+                                     real-time data handling and reliable system performance for continuous forest monitoring.</p>
                             </div>
 
                             <!-- OpenCV -->
@@ -463,7 +487,9 @@
                                     <span class="spec-name">Computer Vision Library</span>
                                     <span class="spec-model">OpenCV</span>
                                 </div>
-                                <p class="spec-desc">Handles advanced forest image processing, image compression feeds, and records changes to filter out false motion alarms.</p>
+                                <p class="spec-desc">OpenCV is used in the GREEN system for image processing and analysis of captured forest visuals. It handles 
+                                    image enhancement, compression, and filtering to improve data quality and help reduce false motion detections, ensuring more 
+                                    accurate visual monitoring outputs</p>
                             </div>
 
                             <!-- MySQL -->
@@ -472,7 +498,8 @@
                                     <span class="spec-name">Database Infrastructure</span>
                                     <span class="spec-model">MySQL</span>
                                 </div>
-                                <p class="spec-desc">Secures system activity history, logs sensor timestamps, registers active forest coordinates, and holds user permissions.</p>
+                                <p class="spec-desc">MySQL serves as the central data storage system of the GREEN platform, securely managing sensor logs, activity 
+                                    timestamps, forest location records, and user access permissions. It ensures organized, reliable, and persistent storage of all system data.</p>
                             </div>
 
                             <!-- Connectivity -->
@@ -481,7 +508,8 @@
                                     <span class="spec-name">Data Sync Pipeline</span>
                                     <span class="spec-model">Cellular / SIM Mod</span>
                                 </div>
-                                <p class="spec-desc">Transmits telemetry packets over cellular networks. Removes SMS dependency by channeling data packages directly via SIM card internet access.</p>
+                                <p class="spec-desc">The Cellular/SIM module enables wireless data transmission for the GREEN system by sending telemetry data through mobile network 
+                                    connectivity. It removes the need for SMS-based communication by directly transmitting data packets via cellular internet, ensuring continuous off-grid system connectivity.</p>
                             </div>
 
                         </div>
